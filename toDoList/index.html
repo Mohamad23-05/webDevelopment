@@ -12,7 +12,7 @@
 </head>
 <body>
     <main class="app">
-        <h1 class="toDoTitle">your To-Do List 🔥</h1>
+        <h1 class="toDoTitle">my To-Do List 🔥</h1>
         <section class="greeting">
             <h2 class="title">
                 Hey, <input type="text" name="myName" id="name" placeholder="your Name">
@@ -25,22 +25,31 @@
             <form id="newToDoList">
                 <h4>What's on your To-Do List?</h4>
                 <input type="text" name="content" id="content" placeholder="e.g. Make launch">
-                <h4>Pick a category</h4>
+                    <h4 class="category">Pick a category</h4>
                 <div class="options">
                     <label>
                         <input type="radio" name="category" id="category1" value="business">
                         <span class="bubble businees"></span>
-                            <div>businees</div>
+                            businees
                     </label>
 
                     <label>
-                        <input type="radio" name="category" id="category1" value="personal">
+                        <input type="radio" name="category" id="category2" value="personal">
                         <span class="bubble personal"></span>
-                            <div>personal</div>
+                            personal
                     </label>
+
+                    <!-- <label>
+                        <input type="radio" name="category" id="category3" value="health">
+                        <span class="bubble personal"></span>
+                            health
+                    </label> -->
                 </div>
-                <input type="submit" value="Add todo">
-            </form>
+                <div class="category-wrapper">
+                    <input type="submit" value="Add todo" title="submit">
+                    <button class="add-category" title="add a new category">+</button>
+                </div>
+                </form>
         </section>
 
         <section class="toDoList">
