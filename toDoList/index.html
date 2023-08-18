@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Josefin+Sans&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="main.css">
 </head>
@@ -18,26 +18,24 @@
             </h2>
         </section>
 
-        <section class="createToDo">
+        <section class="create-ToDo">
             <h3>CREATE A TO-DO</h3>
 
             <form id="newToDoList">
                 <h4>What's on your To-Do List?</h4>
                 <input type="text" name="content" id="content" placeholder="e.g. Make launch">
                 <h4>Pick a category</h4>
-                <div class="option">
+                <div class="options">
                     <label>
                         <input type="radio" name="category" id="category1" value="business">
-                        <span class="bubble businees">
+                        <span class="bubble businees"></span>
                             <div>businees</div>
-                        </span>
                     </label>
 
                     <label>
-                        <input type="radio" name="category" id="category1" value="business">
-                        <span class="bubble businees">
-                            <div>businees</div>
-                        </span>
+                        <input type="radio" name="category" id="category1" value="personal">
+                        <span class="bubble personal"></span>
+                            <div>personal</div>
                     </label>
                 </div>
                 <input type="submit" value="Add todo">
@@ -47,10 +45,10 @@
         <section class="toDoList">
             <h3>ToDo-List</h3>
             <div class="list" id="ToDo-List">
-                <div class="toDoItem">
+                <!-- <div class="toDoItem done">
                     <label>
                         <input type="checkbox">
-                        <span class="bubnle businees"></span>
+                        <span class="bubble businees"></span>
                     </label>
 
                     <div class="toDoContent">
@@ -77,7 +75,7 @@
                         <button class="edit">Edit</button>
                         <button class="delete">Delete</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
