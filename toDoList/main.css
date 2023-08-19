@@ -23,6 +23,23 @@
     font-family: 'sans-serif';
 }
 
+/* @media (min-width:768px){
+    .app{
+    max-width: 100%;
+    }
+} */
+@media(min-width:900px){
+    .app{
+        margin: 1rem auto;
+        max-width: 70%;
+    }
+}
+@media(min-width:1200px){
+    .app{
+        max-width: 50%;
+    }
+}
+
 input:not([type="radio"]):not([tag="checkbox"]), button{
     appearance: none;
     border: none;
