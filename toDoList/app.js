@@ -26,7 +26,7 @@ window.addEventListener('load', ()=>{
 
         DisplayTodos();
     })
-    //DisplayTodos();
+    DisplayTodos();
 })
 
 function DisplayTodos() {
@@ -113,5 +113,38 @@ function DisplayTodos() {
         })
 
     })
-
+    //addCategory();
 }
+
+// function addCategory(){
+
+//     const addCategoryBtn = document.querySelector('#addCategory');
+//     const optionsDiv = document.querySelector('#option');
+
+//     addCategoryBtn.addEventListener('click', e=>{
+//         const newCategoryLabel = document.createElement('label');
+//         newCategoryLabel.classList.add('category-label');
+
+//         const deleteCategoryBtn = document.createElement('button');
+//         deleteCategoryBtn.classList.add('delCategory');
+//         deleteCategoryBtn.title = 'delete category';
+//         deleteCategoryBtn.textContent = '-';
+
+//         const newCategoryPrompt = prompt("Add a new Category:", "Name: health");
+//         const newCategoryInput = document.createElement('input');
+//         newCategoryInput.type = 'radio';
+//         newCategoryInput.name = 'category';
+//         newCategoryInput.value = newCategoryPrompt;
+
+//         const newCategorySpan = document.createElement('span');
+//         newCategorySpan.classList.add(`bubble ${newCategoryPrompt}`);
+//         newCategorySpan.textContent = newCategoryPrompt;
+
+//         newCategoryLabel.appendChild(deleteCategoryBtn);
+//         newCategoryLabel.appendChild(newCategoryInput);
+//         newCategoryLabel.appendChild(newCategorySpan);
+
+//         optionsDiv.appendChild(newCategoryLabel);
+
+//     })
+// }
