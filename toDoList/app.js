@@ -25,8 +25,15 @@ window.addEventListener('load', ()=>{
         e.target.reset();
 
         DisplayTodos();
+        addCategory();
+        DisplayCategories();
+
+
     })
     DisplayTodos();
+    addCategory();
+    DisplayCategories();
+
 })
 
 function DisplayTodos() {
@@ -111,40 +118,57 @@ function DisplayTodos() {
             localStorage.setItem('todos',JSON.stringify(todos));
             DisplayTodos();
         })
-
     })
-    //addCategory();
+}
+function DisplayCategories() {
+    const optionsDiv = document.querySelector('#option');
+    const predefinedCategories = ["business", "personal"]; // Add predefined categories here
+
+    // Retrieve categories from localStorage
+    const categories = JSON.parse(localStorage.getItem('categories')) || [];
+
+    optionsDiv.innerHTML = '';
+
+    categories.forEach(category => {
+        const newCategoryLabel = document.createElement('label');
+        newCategoryLabel.classList.add('category-label');
+
+        const newCategoryInput = document.createElement('input');
+        newCategoryInput.type = 'radio';
+        newCategoryInput.name = 'category';
+        newCategoryInput.value = category;
+
+        const newCategorySpan = document.createElement('span');
+        newCategorySpan.classList.add('bubble');
+        newCategorySpan.classList.add(category);
+        // newCategorySpan.textContent = category;
+
+        const newCategoryText = document.createTextNode(category); // Create a text node
+
+        newCategoryLabel.appendChild(newCategoryInput);
+        newCategoryLabel.appendChild(newCategorySpan);
+        newCategoryLabel.appendChild(newCategoryText); // Append the text node
+
+        optionsDiv.appendChild(newCategoryLabel);
+    });
 }
 
-// function addCategory(){
+function addCategory() {
+    const addCategoryBtn = document.querySelector('#addCategory');
+    const optionsDiv = document.querySelector('#option');
 
-//     const addCategoryBtn = document.querySelector('#addCategory');
-//     const optionsDiv = document.querySelector('#option');
+    addCategoryBtn.addEventListener('click', e => {
+        const newCategoryPrompt = prompt("Add a new Category:", "Name: health");
+        
+        if (newCategoryPrompt) {
+            // Save the new category to localStorage
+            const categories = JSON.parse(localStorage.getItem('categories')) || [];
+            categories.push(newCategoryPrompt);
+            localStorage.setItem('categories', JSON.stringify(categories));
 
-//     addCategoryBtn.addEventListener('click', e=>{
-//         const newCategoryLabel = document.createElement('label');
-//         newCategoryLabel.classList.add('category-label');
+            // Display the updated categories
+            DisplayCategories();
+        }
+    });
+}
 
-//         const deleteCategoryBtn = document.createElement('button');
-//         deleteCategoryBtn.classList.add('delCategory');
-//         deleteCategoryBtn.title = 'delete category';
-//         deleteCategoryBtn.textContent = '-';
-
-//         const newCategoryPrompt = prompt("Add a new Category:", "Name: health");
-//         const newCategoryInput = document.createElement('input');
-//         newCategoryInput.type = 'radio';
-//         newCategoryInput.name = 'category';
-//         newCategoryInput.value = newCategoryPrompt;
-
-//         const newCategorySpan = document.createElement('span');
-//         newCategorySpan.classList.add(`bubble ${newCategoryPrompt}`);
-//         newCategorySpan.textContent = newCategoryPrompt;
-
-//         newCategoryLabel.appendChild(deleteCategoryBtn);
-//         newCategoryLabel.appendChild(newCategoryInput);
-//         newCategoryLabel.appendChild(newCategorySpan);
-
-//         optionsDiv.appendChild(newCategoryLabel);
-
-//     })
-// }
