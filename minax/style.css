@@ -1,0 +1,36 @@
+/* Center the container div in the middle of the screen */
+/* body {
+
+  height: 100vh; 100% of the viewport height
+  margin: 0;
+  background-color: #f0f0f0; Set a background color for the entire page
+} */
+
+.first-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the container */
+.container {
+  display: flex;
+  width: 80%; /* Adjust the width as needed */
+  height: 80%;
+  /* align-items: center; */
+  background-color: #ffa500; /* Set a background color for the container */
+}
+
+/* Style for the content div on the left */
+.div-content {
+  flex: 1.5; /* Take up 3/4 of the container's width */
+  padding: 20px;
+
+}
+/* Style for the image div on the right */
+.div-img {
+  flex: 1; /* Take up 1/4 of the container's width */
+  max-width: 100%;
+  background-color: purple;
+}
+
